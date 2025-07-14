@@ -262,6 +262,12 @@
 }
 
 
+@media (max-width: 768px) {
+       
+.offer-btn {
+       font-size: 10px;
+}
+}
 
 /* Top Contact Bar */
 .top-contact-bar {
