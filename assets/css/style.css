@@ -51,29 +51,7 @@
 
 
 
-.offer-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #226681;
-    color: #ECE9E1;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: #226681 1px solid;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 999;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
 
-.offer-btn:hover {
-    background:transparent;
-    border: 1 px #226681 solid ;
-    color: #226681;
-    transform: scale(1.05);
-}
 
 
 
@@ -259,42 +237,29 @@
 }
 
 
-        #backToTopBtn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #226681; 
-            color: #ece9e1;
-            border: none;
-            border-radius: 50%; 
-            width: 50px;
-            height: 50px;
-            font-size: 24px; 
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0; 
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.2s ease-out;
-            z-index: 1000; 
-        }
+.offer-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #226681;
+    color: #ECE9E1;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: #226681 1px solid;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
 
-        #backToTopBtn.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #backToTopBtn:hover {
-            transform: translateY(-5px);
-        }
-
-        #backToTopBtn:active {
-            background-color: #111;
-        }
-
-
+.offer-btn:hover {
+    background:transparent;
+    border: 1 px #226681 solid ;
+    color: #226681;
+    transform: scale(1.05);
+}
 
 
 
