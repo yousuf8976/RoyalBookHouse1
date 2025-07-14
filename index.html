@@ -1,0 +1,1759 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Book House</title>
+    
+    <link rel="icon" href="assets/images/Fav Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<body>
+
+     <button id="backToTopBtn" title="Go to top">&#8593;</button> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        
+            const backToTopBtn = document.getElementById("backToTopBtn");
+
+            window.onscroll = function() {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.classList.add("show");
+                } else {
+                    backToTopBtn.classList.remove("show");
+                }
+            };
+
+            backToTopBtn.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' 
+                });
+            };
+        });
+    </script>
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <button class="close-button" id="closeButton">&times;</button>
+        <h2 class="modal-title cinzel-text">Get 50% Off<br>On Your First Publishing Project</h2>
+        <p class="modal-description plus-jakarta-sans">
+            Enter your details below to receive <br>
+            your exclusive 50% off code.
+        </p>
+        <form class="modal-form" action="https://api.web3forms.com/submit" method="POST" id="discountForm">
+            <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+            
+            <input type="text" name="name" placeholder="Your Name" class="email-input rounded-pill" required>
+
+            <input type="tel" name="phone" placeholder="+1 (___) ___-____" class="email-input rounded-pill" required pattern="^\+1\s?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$">
+
+            <input type="email" name="email" placeholder="Email address" class="email-input rounded-pill" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+            <button type="submit" class="submit-button plus-jakarta-sans rounded-pill">Get My 50% Off</button>
+        </form>
+        <a href="#" class="continue-shopping plus-jakarta-sans" id="continueShopping">Continue browsing</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+   <!-- Top Contact Bar -->
+<div class="top-contact-bar">
+    <div class="container">
+        <div class="contact-bar-content">
+            <div class="contact-bar-item">
+                <i class="fab fa-whatsapp"></i>
+                <span>+1 (646) 453 4543</span>
+            </div>
+            <div class="contact-bar-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@royalbookhouse.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>// Top Contact Bar Interactions
+document.addEventListener('DOMContentLoaded', function() {
+   
+    const whatsappItem = document.querySelector('.contact-bar-item:first-child');
+    if (whatsappItem) {
+        whatsappItem.addEventListener('click', function() {
+            const phoneNumber = '+13239168484'; // Replace with your WhatsApp number
+            const message = 'Hello! I would like to inquire about your services.';
+            const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
+    const emailItem = document.querySelector('.contact-bar-item:last-child');
+    if (emailItem) {
+        emailItem.addEventListener('click', function() {
+            const email = 'contact@thehouseofbestsellers.com';
+            const subject = 'Inquiry about your services';
+            const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            window.location.href = mailtoUrl;
+        });
+    }
+});</script>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div class="navv" style="width: 120px;"></div>
+
+
+    <a class="navbar-brand mx-auto" href="index.html">
+      <img src="assets/images/Logo RoyalBookHouse .png" alt="Your Brand Logo" class="brand-logo">
+    </a>
+
+
+    <div >
+      <a href="" class="live-chat-btn plus-jakarta-sans open-discount-modal">GET 50% OFF!</a>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    <!-- Hero Section -->
+     
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content data-aos="fade-right"">
+                        <h1 class="cinzel-text">Professional Publishing Services for <span class="highlight">Aspiring</span> Authors</h1>
+                        
+                        <h2 class="plus-jakarta-sans">Ready To <span class="highlight">Become a Published Author</span> Today?</h2>
+                        
+                        <ul class="feature-list plus-jakarta-sans">
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                              Reach Readers via Amazon Kindle
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                 Deep Market and Customer Insights
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                               Expert Sales Growth Strategies Shared
+                            </li>
+                            <li class="feature-item">
+                                <div class="check-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                               Boost Brand with Multi-Channel Engagement
+                            </li>
+                        </ul>
+                        
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                              <a href="https://www.sortlist.com/agency/royal-book-house" target="_blank">  <div class="clutch-badge">
+                                    <img src="assets/images/sort.png" style="height: 90%; width: 103px;" alt="">
+                                </div></a>
+                            </div>
+                           <a href="https://www.sitejabber.com/reviews/royalbookhouse.com" target="_blank"> <div class="badge-item google-badge">
+                             <img src="assets/images/site.png" style="height: 100%; width: 130px;" alt="">
+                                    <div></a>
+
+                                </div>
+                            </div>
+                               <a href="https://www.trustpilot.com/review/royalbookhouse.com" target="_blank">
+                            <div class="badge-item trustpilot-badge">
+                             <img src="assets/images/Group-427320643.png" style="height: 100%; width: 130px;" alt="">
+                                <div> </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons plus-jakarta-sans">
+                            <button class="btn btn-primary-custom open-discount-modal">Get Started</button>
+                            <a href="https://wa.me/16464534543?text=Hi%20I%20am%20interested%20in%20your%20services" target="_blank"  class="btn-outline-custom">
+                                <i class="fas fa-phone"></i>
+                                +1 (646) 453 4543
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="col-lg-6">
+    <div class="hero-image">
+        <img src="assets/images/Royal book house_Монтажная область 1.png" 
+             alt="Book Publishing Services - Person reading with bookshelves" 
+             class="hero-illustration">
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Consultation Section -->
+<section id="cs1"  class="consultation-section1" >
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+                
+                <div class="col-lg-6">
+                    <div class="consultation-image">
+                        <img src="assets/images/image 21.png" alt="Free Publishing Consultation" class="consultation-img">
+                    </div>
+                </div>
+
+              
+                <div class="col-lg-6">
+                    <div class="consultation-form">
+                        <h2 class="consultation-title cinzel-text">
+                            Request Free <span class="highlight">Publishing</span><br>
+                            <span class="highlight">Consultation.</span>
+                        </h2>
+
+                        <form id="consultationForm" class="consultation-form-fields plus-jakarta-sans"
+                              action="https://api.web3forms.com/submit"
+                              method="POST">
+
+                            <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                          
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Full Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Email Here" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Phone Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select name="service" class="form-select custom-select rounded-pill" required>
+                                        <option value="">Select Service</option>
+                                        <option value="Book Publishing">Book Publishing</option>
+                                        <option value="Book Marketing">Book Marketing</option>
+                                        <option value="Book Writing">Book Writing</option>
+                                        <option value="Editing Services">Editing Services</option>
+                                        <option value="Cover Design">Cover Design</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                       
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control custom-textarea rounded-4"
+                                          rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Brands Slider Section -->
+<section class="brands-section">
+    <div class="container-fluid">
+        <div class="brands-content">
+            <h2 class="brands-title cinzel-text"><span class="kk">Royal Book House </span>, Your Best Choice For A Reason. Period!</h2>
+            
+            <div class="brands-slider-wrapper">
+                <div class="brands-slider" id="brandsSlider">
+                    <div class="brands-track" id="brandsTrack">
+                        <!-- Brand 1 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-2.png" alt="Best Content Marketing 2023" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 2 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-3 (1).webp" alt="Top Content Marketing Agencies" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 3 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-8.webp" alt="Reviews.io 4.8 Rating" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 4 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-4.webp" alt="Bark Certified" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 5 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-5.webp" alt="Google Certified Publishing Partner" class="brand-image">
+                        </div>
+                        
+                        <!-- Brand 6 -->
+                        <div class="brand-card">
+                            <img src="assets/images/addi-1.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-3 (1).webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-8.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                         <div class="brand-card">
+                            <img src="assets/images/addi-4.webp" alt="Trustpilot Excellence" class="brand-image">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="services-section">
+    <div class="container">
+        <div class="services-content">
+            <h2 class="services-title cinzel-text">
+                Your <span class="rr">Story</span>, Our Expertise: <br> Personalized  Publishing for Lasting  <span class="rr"> Success</span>
+            </h2>
+            
+            <div class="row">
+                <!-- Service Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card plus-jakarta-sans">
+                        <div class="card-header">
+                            <h3 class="card-title">Amazon Book Publishing Essentials</h3>
+                            <br>
+                            <p class="card-description">
+                                Made for Authors Who Sell Exclusively <span class="highlight">on Amazon</span>
+                            </p>
+                            <br>
+                        </div>
+                        
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon KDP Publishing
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Formatting Check for All File Formats
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Multiple Print-Ready Formats (eBook, paperback, and hardcover)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Keyword Research
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon A+ Content
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Listing Optimization (author bio, book description, subtitle suggestions)
+                                    </li>
+                                     <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Author Central Account Creation
+                                    </li>
+                                     <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Market and Research Analysis
+                                    </li>
+                                     <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Competitive Book Pricing Strategy
+                                    </li>
+                                     <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                       Dedicated Publishing Expert
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                           <a href="#"><button class="btn btn-service-primary open-discount-modal">Learn More</button></a> 
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card plus-jakarta-sans">
+                        <div class="card-header">
+                            <h3 class="card-title">Multi-Platform Publishing Bundle</h3>
+                            <br>
+                            <p class="card-description">
+                                Best for Writers Reaching Readers on All  <span class="highlight">Major Platforms</span>
+                            </p>
+                            <br>
+                        </div>
+                        
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+
+                                       
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                       KDP, Barnes & Noble, Lulu, Google, and Apple Books Publishing
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Formatting and File Conversions
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                       Multiple Print-Ready Formats (eBook, paperback, and hardcover)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                Keyword Research
+                                    </li>
+
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Listing Optimization (author bio, book description, subtitle suggestions)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon Author Central Account Creation
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Amazon A+ Content
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Competitive Book Pricing Strategy
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Market & Research Analysis
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        ISBN Purchase Included
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Dedicated Publishing Expert
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                          <a href="">  <button class="btn btn-service-primary open-discount-modal">Get A Quote</button></a>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card plus-jakarta-sans">
+                        <div class="card-header">
+                            <h3 class="card-title">Professional Publishing Solution</h3>
+                            <br>
+                            <p class="card-description">
+                               Comprehensive Publishing Services Led by  <span class="highlight">Industry Experts</span>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-pricing">
+                            <p class="pricing-text">Pricing Available Upon Request</p>
+                        </div>
+                        
+                        <div class="card-features">
+                            <h4 class="features-title">What you get:</h4>
+                            <h5 class="service-category">Professional Services</h5>
+                            <div class="features-scroll-container">
+                                <ul class="features-list">
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Thorough review of your manuscript.
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Editing: copy, line, and developmental (4 editors)
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        A thorough review of your Manuscript
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Layout Formatting and Adjustment
+                                    </li>
+                                    <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                       Copyright of your Book
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                       Cover design (front-spine-back) 4 Impression
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Publishing the book on 15+ platforms, including Amazon, Barnes & Noble, IngramSpark, Kobo, Lulu, Apple Books, Google Books, and more
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                     ISBN & Barcode (for International registrations under your name)
+                                    </li>
+                                      <li class="feature-item">
+                                        <div class="check-circle">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        Accounts Creation
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn-service-primary open-discount-modal">Get A Quote</button></a>
+                        </div>
+                        
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="genres-section">
+    <div class="container-fluid">
+        <div class="genres-content">
+            <h2 class="genres-title cinzel-text">Wide Range of <span class="rr">Genres </span></h2>
+
+            <div class="genres-slider-wrapper">
+                <div class="genres-slider" id="genresSlider">
+                    <div class="genres-track" id="genresTrack">
+           
+                        <div class="book-item"><img src="assets/images/1.png" alt="Book 1" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/2.png" alt="Book 2" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/3.png" alt="Book 3" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/4.png" alt="Book 4" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/5.png" alt="Book 5" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/6.png" alt="Book 6" class="book-cover"></div>
+                        <div class="book-item"><img src="assets/images/7.png" alt="Book 7" class="book-cover"></div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Consultation Section -->
+<section class="consultation-section4">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+    <div class="col-lg-6">
+        <div class="consultation-form">
+            <h2 class="consultation-title cinzel-text">
+                Request Free <span class="highlight">Publishing</span><br>
+                <span class="highlight">Consultation.</span>
+            </h2>
+
+            <form id="consultationForm" class="consultation-form-fields plus-jakarta-sans"
+                  action="https://api.web3forms.com/submit"
+                  method="POST">
+
+                <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" name="name" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Email Here" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <select name="service" class="form-select custom-select rounded-pill" required>
+                            <option value="">Select Service</option>
+                            <option value="Book Publishing">Book Publishing</option>
+                            <option value="Book Marketing">Book Marketing</option>
+                            <option value="Book Writing">Book Writing</option>
+                            <option value="Editing Services">Editing Services</option>
+                            <option value="Cover Design">Cover Design</option>
+                        </select>
+                    </div>
+                </div>
+
+               
+                <div class="mb-4">
+                    <textarea name="message" class="form-control custom-textarea rounded-4"
+                              rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="consultation-image">
+            <img src="assets/images/image 23.png" alt="Free Publishing Consultation" class="consultation-img">
+        </div>
+    </div>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="book-types-section mt-5">
+    <div class="container">
+        <div class="book-types-content">
+            <h2 class="book-types-title cinzel-text"><span class="rr">Publish </span> Multiple Types of Books</h2>
+            
+            <div class="book-categories-grid plus-jakarta-sans">
+                <!-- Row 1 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Business & Investing</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Children's Book</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Non-Fiction</div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Literature & Fiction</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Mystery, Thriller & Suspense</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Science Fiction</div>
+                    </div>
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="row mb-2">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Teens & Young Adults</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Comics & Graphic Novels</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Biography</div>
+                    </div>
+                </div>
+                
+                <!-- Row 4 -->
+                <div class="row mb-5">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Romance</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill open-discount-modal">Short Stories</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="category-pill category-pill-highlight open-discount-modal">...and more!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-types-cta plus-jakarta-sans">
+                <button class="btn btn-book-call open-discount-modal">Book a Free Consultation</button>
+                <button class="btn btn-live-chat open-discount-modal">GET 50% OFF!</button>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+
+<div class="text-center mb-2 mt-5 pb-4  ">
+    <h1 class="display-4  text-dark mb-4 cinzel-text">The Core Elements of <br> <span class="rr"> Successful  </span> Publishing</h1>
+    <p class="lead text-muted mx-auto plus-jakarta-sans" style="max-width: 800px;">
+       While your book’s content is crucial, its presentation is just as important for capturing and retaining readers. That’s why our expert design services are crafted to elevate your book’s visual appeal — inside and out — ensuring a polished, professional finish that resonates with your audience.
+    </p>
+</div>
+
+
+
+ <div class="super-section">
+    
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">1</div>
+                            <h2 class="super-title cinzel-text">Cover Design</h2>
+                            <p class="super-description plus-jakarta-sans">
+                               We craft visually stunning books that captivate readers at first glance. Through expert typography and thoughtful design, we ensure every word is not only easy to read but leaves a lasting impression. Our team incorporates custom details tailored to your vision — from striking cover art to beautifully structured layouts. With a focus on aesthetics and reader engagement, we transform your ideas into a book that truly stands out and connects with your audience.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 65.png" alt="Research process" class="super-image">
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 66.png" alt="Professional formatting" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">2</div>
+                            <h2 class="super-title cinzel-text">Formatting</h2>
+                            <p class="super-description plus-jakarta-sans">
+                               Our professional layouts are crafted to deliver a seamless reading experience, built around industry best practices. Every design prioritizes clarity, intuitive navigation, and visual appeal — ensuring content that’s not only polished but also highly readable and accessible. The result is a layout that enhances engagement while meeting the highest standards of quality and usability.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">3</div>
+                            <h2 class="super-title cinzel-text">Illustrations</h2>
+                            <p class="super-description plus-jakarta-sans">
+                               Enhance your book with captivating illustrations that bring your story to life. Our wide range of artistic styles ensures a unique visual identity tailored to your narrative. From intricate details to bold, expressive artwork, each illustration is thoughtfully crafted to enrich your content and elevate the overall aesthetic. The result is a memorable visual experience that draws readers deeper into your world.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 67.png" alt="Creative illustrations" class="super-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 68.png" alt="Typography design" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">4</div>
+                            <h2 class="super-title cinzel-text">Editing</h2>
+                            <p class="super-description plus-jakarta-sans">
+                               With decades of editorial expertise, we meticulously refine every element of your manuscript — from structure and tone to grammar and spelling. Our process ensures a polished, professional finish that transforms your content into a seamless and engaging read. We focus on clarity, coherence, and precision, addressing even the smallest details to meet the highest publishing standards. Trust us to perfect your manuscript, making it not only error-free but also compelling and impactful.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">5</div>
+                            <h2 class="super-title cinzel-text">Book Proofreading</h2>
+                            <p class="super-description plus-jakarta-sans">
+                            Book proofreading is the final, essential step to ensure your manuscript is error-free and publication-ready. We conduct a thorough review to catch typos, spelling mistakes, and grammatical errors, examining every sentence and punctuation mark with precision. Our goal is to enhance readability and flow while preserving your unique voice and writing style.
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 69.png" alt="Brand identity design" class="super-image">
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 70.png" alt="Digital publishing platform" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">6</div>
+                            <h2 class="super-title cinzel-text">All Leading Publishing Platforms</h2>
+                            <p class="super-description plus-jakarta-sans">
+                              We make sure your book reaches a global audience by publishing it across all major platforms, including Amazon, Apple Books, Audible, Google Play, and more. With our expertise, your work becomes accessible to readers and listeners worldwide — expanding your reach and maximizing your book’s potential for success.
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">7</div>
+                            <h2 class="super-title cinzel-text">Printing</h2>
+                            <p class="super-description plus-jakarta-sans">
+                              Backed by generations of printing expertise, we deliver exceptional quality in every print project. Our deep industry experience allows us to offer a wide range of cover styles and binding options, customized to suit your unique vision. From classic to contemporary designs, we combine advanced technology with skilled craftsmanship to create books that are both visually striking and built to last.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <img src="assets/images/Rectangle 71.png" alt="Marketing strategy" class="super-image">
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="super-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-1">
+                    <img src="assets/images/Rectangle 72.png" alt="Customer support" class="super-image">
+                </div>
+                <div class="col-lg-6 order-2">
+                    <div class="content-wrapper">
+                        <div>
+                            <div class="super-number cinzel-text">8</div>
+                            <h2 class="super-title cinzel-text">Marketing</h2>
+                            <p class="super-description plus-jakarta-sans">
+                          Our expert marketing team designs powerful outreach campaigns to build excitement and visibility around your audiobook. Each strategy is carefully tailored to connect with your target audience, ensuring your release stands out, captures attention, and drives meaningful engagement. Let us help you make a lasting impression and generate buzz before your audiobook even launches.
+
+
+                            </p>
+                            <a href="#" class="learn-more-btn plus-jakarta-sans open-discount-modal">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<!-- Consultation Section -->
+<section class="consultation-section5">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+                
+                <div class="col-lg-6">
+                    <div class="consultation-image">
+                        <img src="assets/images/image 21.png" alt="Free Publishing Consultation" class="consultation-img">
+                    </div>
+                </div>
+
+              
+                <div class="col-lg-6">
+                    <div class="consultation-form">
+                        <h2 class="consultation-title cinzel-text">
+                            Request Free <span class="highlight">Publishing</span><br>
+                            <span class="highlight">Consultation.</span>
+                        </h2>
+
+                        <form id="consultationForm" class="consultation-form-fields plus-jakarta-sans"
+                              action="https://api.web3forms.com/submit"
+                              method="POST">
+
+                            <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                          
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Full Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Email Here" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Phone Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select name="service" class="form-select custom-select rounded-pill" required>
+                                        <option value="">Select Service</option>
+                                        <option value="Book Publishing">Book Publishing</option>
+                                        <option value="Book Marketing">Book Marketing</option>
+                                        <option value="Book Writing">Book Writing</option>
+                                        <option value="Editing Services">Editing Services</option>
+                                        <option value="Cover Design">Cover Design</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                       
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control custom-textarea rounded-4"
+                                          rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="blogs-section mt-5">
+        <div class="container">
+            <h2 class="section-title text-dark cinzel-text">Our Published <span class="rr"> Blogs</span></h2>
+            <p class="section-subtitle plus-jakarta-sans">
+                Learn with us through our proven marketing principles combined with modern-day branding and storytelling expertise
+            </p>
+            
+            <div class="row justify-content-center plus-jakarta-sans">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                           
+                            <img src="assets/images/resource-img-1 (1).webp" alt="Fine-Tune Your Book Guide" class="blog-image">
+                          
+                         
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">The Ultimate Guide to Self-Editing Your Manuscript Like a Pro</h3>
+                            <p class="blog-description">Effortless Publishing — From Manuscript to Marketplace</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                         
+                            <img src="assets/images/resource-img-2.webp" alt="Formatting 101 Guide" class="blog-image">
+                          
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Publish-Ready Formatting: Make Your Manuscript Look Professional</h3>
+                            <p class="blog-description">Everything You Need to Know for a Successful Book Launch.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="assets/images/resource-img-3.webp" alt="Self-Publishing Guide" class="blog-image">
+                        
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Your Path to Publishing: From First Draft to Bestselling Book</h3>
+                            <p class="blog-description">Refine Your Draft into a Smooth and Engaging Narrative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center plus-jakarta-sans">
+                <button class="btn explore-btn open-discount-modal">Explore More</button>
+            </div>
+        </div>
+    </section>
+
+     <section class="card-section plus-jakarta-sans">
+        <div class="container">
+            <h2 class="section-title">Best Book Publishing Services in The USA</h2>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number cinzel-text">1</div>
+                        <h3 class="service-title cinzel-text">Sign Up</h3>
+                        <p class="service-description">
+                            Ready to publish? Submit your manuscript and we'll contact you to tailor your publishing plan.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number cinzel-text">2</div>
+                        <h3 class="service-title cinzel-text">Editing & Proofreading</h3>
+                        <p class="service-description">
+                  A skilled editorial expert will refine your manuscript, removing all errors to enhance clarity and readability.
+
+
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number cinzel-text">3</div>
+                        <h3 class="service-title cinzel-text">Designing</h3>
+                        <p class="service-description">
+                             Creative cover design combined with a compelling interior layout ensures your book stands out and keeps readers interested.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-number cinzel-text">4</div>
+                        <h3 class="service-title cinzel-text">Publishing</h3>
+                        <p class="service-description">
+                         Showcase your work globally by distributing it through trusted platforms like Amazon, Barnes & Noble, and Kobo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+ <section class="published-section">
+        <div class="container-fluid">
+            <h2 class="section-title cinzel-text">Get<span class="kk"> Published </span> On</h2>
+            
+            <div class="platforms-container">
+                <div class="platform-card">
+               
+                    <img src="assets/images/published-img-1.webp" alt="Amazon KDP" class="platform-logo">
+                    
+                    
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                 
+                    <img src="assets/images/published-img-2.webp" alt="Barnes & Noble" class="platform-logo">
+               
+                
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                   
+                    <img src="assets/images/published-img-3.webp" alt="IngramSpark" class="platform-logo">
+                  
+                   
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                    <img src="assets/images/published-img-4.webp" alt="Audible" class="platform-logo">
+                
+                </div>
+                
+                <div class="separator-dot d-none d-lg-block"></div>
+                
+                <div class="platform-card">
+                    <img src="assets/images/published-img-5.webp" alt="iTunes" class="platform-logo">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<!-- Consultation Section -->
+<section id="cs2" class="consultation-section2">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+    <div class="col-lg-6">
+        <div class="consultation-form">
+            <h2 class="consultation-title cinzel-text">
+                Request Free <span class="highlight">Publishing</span><br>
+                <span class="highlight">Consultation.</span>
+            </h2>
+
+            <form id="consultationForm" class="consultation-form-fields plus-jakarta-sans"
+                  action="https://api.web3forms.com/submit"
+                  method="POST">
+
+                <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" name="name" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" name="email" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Email Here" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                               placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <select name="service" class="form-select custom-select rounded-pill" required>
+                            <option value="">Select Service</option>
+                            <option value="Book Publishing">Book Publishing</option>
+                            <option value="Book Marketing">Book Marketing</option>
+                            <option value="Book Writing">Book Writing</option>
+                            <option value="Editing Services">Editing Services</option>
+                            <option value="Cover Design">Cover Design</option>
+                        </select>
+                    </div>
+                </div>
+
+               
+                <div class="mb-4">
+                    <textarea name="message" class="form-control custom-textarea rounded-4"
+                              rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="consultation-image">
+            <img src="assets/images/image 23.png" alt="Free Publishing Consultation" class="consultation-img">
+        </div>
+    </div>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <div class="qa-section">
+        <div class="container">
+            <h1 class="qa-title cinzel-text">Q/A Session</h1>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Question 1 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">01</div>
+                            <p class="qa-text plus-jakarta-sans">What kind of books do you help authors publish?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                            We work with authors across a wide range of genres and formats. Whether you’re writing fiction—such as romance, thrillers, or fantasy—or nonfiction, including memoirs, business, self-help, or educational content, we’ve got you covered. We also specialize in children’s books, poetry, art books, cookbooks, and more. From print to eBook and even audiobooks, we help bring your vision to life and ensure your book reaches the right audience on the right platforms.
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">02</div>
+                            <p class="qa-text plus-jakarta-sans">What’s the typical timeline for publishing a book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                         The publishing timeline can vary depending on the services you choose and the complexity of your book. On average, the process takes 4 to 12 weeks from manuscript submission to final publication. This includes editing, formatting, cover design, and distribution. If you're opting for advanced services like illustrations, marketing, or audiobook production, the timeline may extend slightly. Our team works efficiently to ensure high-quality results while keeping your launch on track.
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">03</div>
+                            <p class="qa-text plus-jakarta-sans">Can I get my book edited before publishing with you?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                           Absolutely. We provide full editing support as part of our publishing process. From big-picture revisions to detailed proofreading, our editors ensure your manuscript meets the highest standards. Whether you need help with structure, flow, or final polish, we’ve got you covered.
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">04</div>
+                            <p class="qa-text plus-jakarta-sans">Will I retain the rights to my book after publishing?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                          Yes — you retain full rights to your book. We believe authors should maintain complete ownership of their work. When you publish with us, you keep all intellectual property rights, including content, title, and royalties. Our goal is to support your publishing journey without taking control of your creative or legal ownership. You're free to market, sell, or republish your book however you choose.
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">05</div>
+                            <p class="qa-text plus-jakarta-sans">What format should I use to submit my manuscript?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                          We recommend submitting your manuscript in Microsoft Word (.doc or .docx) or Google Docs format, as these are ideal for editing and formatting. You may also submit in PDF for review purposes, but editable formats are preferred to ensure smooth processing. Make sure your manuscript is in a single file, properly organized, and free of unnecessary formatting. If you have special elements like images, tables, or footnotes, please include those clearly marked or in a separate folder if needed.
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Question 6 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">06</div>
+                            <p class="qa-text plus-jakarta-sans">How much does it cost to publish a book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                           The cost of publishing a book can vary depending on the services you choose and the complexity of your project. Our publishing packages typically range from affordable basic plans to comprehensive premium services, which may include editing, design, ISBN registration, distribution, and marketing. We offer customized solutions to fit different budgets and goals, ensuring you get the support you need without overpaying. For an accurate quote, we recommend scheduling a free consultation so we can assess your specific publishing needs.
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">07</div>
+                            <p class="qa-text plus-jakarta-sans">Do you offer marketing services for authors?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                          Yes, we provide a range of book marketing services designed to increase visibility, generate buzz, and drive sales. Our offerings include social media promotion, press releases, Amazon optimization (SEO and categories), email campaigns, author website creation, and more. Whether you’re launching a debut title or building long-term brand awareness, our marketing strategies are tailored to your book, genre, and target audience. We’re here to help you stand out in a crowded market.
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">08</div>
+                            <p class="qa-text plus-jakarta-sans">Which platforms will my book be available on?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                           Your book will be distributed to a wide range of major platforms to ensure maximum visibility and global reach. These include Amazon (Kindle and Print), Barnes & Noble, Apple Books, Google Play Books, Kobo, IngramSpark, and Blurb, among others. Whether you're publishing an eBook, paperback, hardcover, or audiobook, we ensure your title is accessible across all leading marketplaces and devices worldwide.
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">09</div>
+                            <p class="qa-text plus-jakarta-sans">Can I order printed copies of my book?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                         Yes, you can absolutely order printed copies of your book. We offer high-quality printing services with a variety of options, including paper type, trim size, binding styles, and cover finishes. Whether you need a small batch for personal use or a larger quantity for retail, events, or giveaways, we’ll help you choose the best print solution to match your goals and budget. You can also reorder copies at any time, with no minimum requirements.
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="qa-item" onclick="toggleAnswer(this)">
+                        <div class="qa-question">
+                            <div class="qa-number cinzel-text">10</div>
+                            <p class="qa-text plus-jakarta-sans">Do you provide ISBNs for published books?</p>
+                            <span class="qa-icon">+</span>
+                        </div>
+                        <div class="qa-answer plus-jakarta-sans">
+                            Yes, we provide ISBNs (International Standard Book Numbers) as part of our publishing packages. An ISBN is essential for identifying and distributing your book across major retailers and platforms. If you prefer, you may also use your own ISBN. Either way, we ensure your book is properly registered and ready for both print and digital distribution with professional metadata setup.
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+      
+            const allItems = document.querySelectorAll('.qa-item');
+            allItems.forEach(item => {
+                if (item !== element && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.qa-icon');
+                    icon.textContent = '+';
+                }
+            });
+
+            const isActive = element.classList.contains('active');
+            const icon = element.querySelector('.qa-icon');
+            
+            if (isActive) {
+                element.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                element.classList.add('active');
+                icon.textContent = '−';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.qa-item')) {
+                const allItems = document.querySelectorAll('.qa-item.active');
+                allItems.forEach(item => {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.qa-icon');
+                    icon.textContent = '+';
+                });
+            }
+        });
+    </script>
+
+
+
+<!-- Consultation Section -->
+<section id="cs3" class="consultation-section3">
+    <div class="container">
+        <div class="consultation-container">
+            <div class="row align-items-center">
+
+                
+                <div class="col-lg-6">
+                    <div class="consultation-image">
+                        <img src="assets/images/image 21.png" alt="Free Publishing Consultation" class="consultation-img">
+                    </div>
+                </div>
+
+              
+                <div class="col-lg-6">
+                    <div class="consultation-form">
+                        <h2 class="consultation-title cinzel-text">
+                            Request Free <span class="highlight">Publishing</span><br>
+                            <span class="highlight">Consultation.</span>
+                        </h2>
+
+                        <form id="consultationForm" class="consultation-form-fields plus-jakarta-sans"
+                              action="https://api.web3forms.com/submit"
+                              method="POST">
+
+                            <input type="hidden" name="access_key" value="b39c0d41-463b-4309-8f21-94ae9625c0ba">
+
+                          
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Full Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Email Here" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" name="phone" class="form-control custom-input rounded-pill"
+                                           placeholder="Enter Phone Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select name="service" class="form-select custom-select rounded-pill" required>
+                                        <option value="">Select Service</option>
+                                        <option value="Book Publishing">Book Publishing</option>
+                                        <option value="Book Marketing">Book Marketing</option>
+                                        <option value="Book Writing">Book Writing</option>
+                                        <option value="Editing Services">Editing Services</option>
+                                        <option value="Cover Design">Cover Design</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                       
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control custom-textarea rounded-4"
+                                          rows="4" placeholder="Tell Us What You're Looking For" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit-custom w-100 rounded-pill">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <div class="container">
+   
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <div class="footer-logo mb-3">
+                       <a href="index.html"> <img src="assets/images/Logo RoyalBookHouse .png" alt="Your Brand" class="img-fluid"></a>
+                    </div>
+                    <p class="footer-tagline plus-jakarta-sans">Your #1 Global Partner for Writing, Publishing, and Marketing Books.</p>
+                </div>
+            </div>
+
+     
+            <div class="row plus-jakarta-sans">
+        
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading cinzel-text">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://royalbookhouse.com/about-us/" target="_blank" class="footer-link">About Us</a></li>
+                        <li><a href="https://royalbookhouse.com/services/" target="_blank" class="footer-link">Services</a></li>
+                        <li><a href="https://royalbookhouse.com/portfolio/" target="_blank" class="footer-link">Portfolio</a></li>
+                        <li><a href="https://royalbookhouse.com/contact-us/" target="_blank" class="footer-link">Contact Us</a></li>
+                        <li><a href="https://royalbookhouse.com/privacy-policy/" target="_blank" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="https://royalbookhouse.com/privacy-policy/" target="_blank" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+    
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <h5 class="footer-heading cinzel-text">Services</h5>
+                    <div class="row plus-jakarta-sans">
+                        <div class="col-sm-6">
+                            <ul class="footer-links">
+                                <li><a href="https://royalbookhouse.com/ghost-writing/" class="footer-link" target="_blank">Book Writing Service</a></li>
+                                <li><a href="https://royalbookhouse.com/book-editing/" class="footer-link" target="_blank">Book Editing Service</a></li>
+                                <li><a href="https://royalbookhouse.com/book-publishing/" class="footer-link"target="_blank">Book Publishing Service</a></li>
+                                <li><a href="https://royalbookhouse.com/book-cover-design/" class="footer-link"target="_blank">Book Cover Design Service</a></li>
+                                <li><a href="https://royalbookhouse.com/" class="footer-link"target="_blank">Book Printing Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="footer-links">
+                                <li><a href="https://royalbookhouse.com/" class="footer-link"target="_blank">Audiobook Service</a></li>
+                                <li><a href="https://royalbookhouse.com/" class="footer-link"target="_blank">Social Media For Author</a></li>
+                                <li><a href="https://royalbookhouse.com/contact-us/" class="footer-link"target="_blank">Ebook Cover Design</a></li>
+                                <li><a href="https://royalbookhouse.com/contact-us/" class="footer-link"target="_blank">Author Website Design</a></li>
+                                <li><a href="https://royalbookhouse.com/contact-us/" class="footer-link"target="_blank">Book Illustration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-12 mb-4">
+                    <h5 class="footer-heading cinzel-text">Contact</h5>
+                    
+                  
+                    <div class="contact-item plus-jakarta-sans">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">+1 (646) 453 4543</div>
+                    </div>
+                    
+                   
+                    <div class="contact-item plus-jakarta-sans">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">info@royalbookhouse.com</div>
+                    </div>
+                    
+                    <div class="contact-item plus-jakarta-sans">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">100 Church St #800, New York,
+NY 10007, United States</div>
+                    </div>
+                    
+                   
+              <div class="social-media-section">
+    <div class="social-icons">
+ 
+        <a href="https://www.facebook.com/theroyalbookhouse?mibextid=wwXIfr&rdid=TpMGyTPCQxhHY1XO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DE7hL8dRa%2F%3Fmibextid%3DwwXIfr" target="_blank" class="social-l">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+      <a href="https://www.instagram.com/accounts/login/?next=%2Froyalbookhouse_%2F&source=omni_redirect" target="_blank" class="social-l">
+         <div>
+      
+            <i class="fab fa-instagram"></i>
+        
+        </div>
+    </a>
+    </div>
+</div>
+
+
+                    <div class="payment-section plus-jakarta-sans">
+                        <div class="secure-payment-label">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Payment By</span>
+                        </div>
+                        <div class="payment-methods">
+                            <div class="payment-card visa"><img src="assets/images/visa-logo-png-transparent.webp" alt="Visa" class="payment-icon"></div>
+                            <div class="payment-card mastercard"><img src="assets/images/mastercard-logo-png-transparent-svg-vector-bie-supply-1.webp" alt="mc" class="payment-icon"></div>
+                            <div class="payment-card discover"><img src="assets/images/American-Express-Logo-PNG-Image.webp" alt="wire" class="payment-icon"></div>
+                            <div class="payment-card apple"><img src="assets/images/Apple-Pay-Logo-PNG-Images.webp" alt="apple" class="payment-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row plus-jakarta-sans">
+                <div class="col-12">
+                    <hr class="footer-divider">
+                    <div class="copyright-text text-center">
+                        © 2025. Royal Book House . All Rights Reserved.| Owned by CLOSETSTER PTY LTD.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const footerLinks = document.querySelectorAll('.footer-link');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+        
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('i').className;
+                    console.log(`Social media click: ${platform}`);
+                    
+                });
+            });
+
+           
+            document.querySelectorAll('.contact-item').forEach((item, index) => {
+                if (index === 0) { 
+                    item.addEventListener('click', function() {
+                        const phoneNumber = this.querySelector('.contact-text').textContent;
+                        window.location.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
+                    });
+                    item.style.cursor = 'pointer';
+                } else if (index === 1) { 
+                    item.addEventListener('click', function() {
+                        const email = this.querySelector('.contact-text').textContent;
+                        window.location.href = `mailto:${email}`;
+                    });
+                    item.style.cursor = 'pointer';
+                }
+            });
+
+            const currentYear = new Date().getFullYear();
+            const copyrightText = document.querySelector('.copyright-text');
+            if (copyrightText) {
+                copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/Js/script.js"></script>   
+    <script src="assets/Js/consultation.js"></script>
+    <script src="assets/Js/slider.js"></script>
+    <script src="assets/Js/service.js"></script>
+
+     <script src="assets/Js/super.js"></script>
+    <script src="assets/Js/titles.js"></script>
+    <script src="assets/Js/popup.js"></script>
+</body>
+</html>
+
